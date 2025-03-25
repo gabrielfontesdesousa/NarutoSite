@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+header{
+  width: 100%;
+  height: 136px;
+  background-color: rgb(109, 109, 109, 0.15);
+  display: flex;
+  justify-content: space-between;
+}
+header nav{
+  display: flex;
+  width: 40%;
+  height: 136px;
+  justify-content: space-around;
+}
+.nav-btn-header {
+  font-family: inherit;
+  display: inline-block;
+  width: 23em;
+  height: 2.9em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 26px;
+  font-size: 17px;
+  z-index: 1;
+  background-color: transparent;
+  border: 2px solid red;
+  border-radius: 50px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.nav-btn-header:before {
+  position: absolute;
+  content: "";
+  background: red;
+  width: 200px;
+  height: 190px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.nav-btn-header:hover {
+  width: 25em;
+  height: 3em;
+}
+
+.nav-btn-header:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.4s all;
+}
+
+.nav-btn-header:hover:before {
+  top: -70px;
+  left: 0px;
+}
+.nav-btn-header a{
+  font-family: 'MontSerrat', sans-serif;
+  font-weight: 400;
+  transition: 0.4s all;
+  text-decoration: none;
+  color: white;
+}
+
+.sub-container-header{
+  width: 18%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+}
+.cart-container{
+  width: 40%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account-icon-container{
+  width: 40%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account-icon-container img{
+  width: 100%;
+  transition: 0.2s;
+}
+.account-icon-container img:hover{
+  width: 105%;
+  opacity: 0.7;
+}
+.cart-container img{
+  width: 90%;
+  transition: 0.2s;
+}
+.cart-container img:hover{
+  width: 95%;
+  opacity: 0.4;
+}
+
