@@ -4,13 +4,12 @@
   display: inline-block;
   width: 19em;
   height: 5.9em;
-  line-height: 2.5em;
   overflow: hidden;
   cursor: pointer;
   margin: 26px;
   z-index: 1;
   background-color: transparent;
-  border: 2px solid red;
+  border: 1px solid red;
   border-radius: 50px;
   position: relative;
   transition: 0.3s;

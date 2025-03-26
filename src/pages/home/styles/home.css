@@ -9,8 +9,8 @@
   overflow: hidden;
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  flex-direction: column-reverse;
+  justify-content: start;
   align-items: center;
 }
 .art-container img{
@@ -25,7 +25,7 @@
   align-items: center;
   flex-direction: column;
   height: calc(100vh - 136px);
-  gap: 30px;
+  gap: 80px;
   justify-content: center;
 }
 .desc-sub-container{

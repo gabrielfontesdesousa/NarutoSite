@@ -24,7 +24,7 @@ header nav{
   font-size: 17px;
   z-index: 1;
   background-color: transparent;
-  border: 2px solid red;
+  border: 1px solid red;
   border-radius: 50px;
   position: relative;
   transition: 0.5s;

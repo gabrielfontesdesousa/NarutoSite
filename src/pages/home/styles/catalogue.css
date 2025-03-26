@@ -1,0 +1,114 @@
+.container-catalogue {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 140vh;
+    align-items: center;
+}
+
+.catalogue-line {
+    width: 70%;
+    height: 45%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.title-section-container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.title-section-container h1 {
+    font-family: 'Bebas Neue';
+    font-size: 110px;
+}
+
+.card {
+    width: 25%;
+    height: 95%;
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+}
+
+.img-container-card {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.img-container-card img{
+    width: 50%;
+}
+
+
+.desc-container-card {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 5px;
+    padding-left: 15px;
+}
+
+.action-area-card {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+}
+.sub-action-area{
+    display: flex;
+    width: 65%;
+    justify-content: space-around;
+}
+.sub-action-area button{
+    width: 150px;
+    background-color: red;
+    border: 0;
+    color: white;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    height: 2.5em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.sub-action-area img{
+    transition: 0.2s;
+
+}
+
+.sub-action-area img:hover{
+    opacity: 0.6;
+    width: 18%;
+}
+.sub-action-area button:hover{
+    width: 155px;
+    opacity: 0.6;
+    height: 35px;
+}
+.sub-action-area img{
+    width: 17%;
+}
+.desc-container-card h1 {
+    font-family: 'Poppins';
+    padding-top: 10px;
+}
+
+.desc-container-card  h3 {
+    font-family: 'Poppins';
+    font-weight: 200;
+    color: #595959;
+}
+.desc-container-card  h4{
+    font-family: 'Poppins';
+    font-weight: 300;
+}
