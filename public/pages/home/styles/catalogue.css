@@ -34,8 +34,8 @@
     font-size: 110px;
 }
 .card {
-  width: 240px;
-  height: 294px;
+  width: 360px;
+  height: 404px;
   padding: .8em;
   background: #252525;
   position: relative;
@@ -79,7 +79,6 @@
   border-top: 1px solid #ddd;
  }
 
- /*Text*/
  .text-title {
   font-weight: 900;
   font-size: 1.2em;
@@ -88,11 +87,9 @@
   color: white;
  }
 
- .text-body {
-  font-size: .9em;
-  color: white;
-  font-family: 'Poppins';
-  padding-bottom: 10px;
+ .textbody {
+    font-family: 'Poppins';
+    color: gray;
  }
 
  /*Button*/

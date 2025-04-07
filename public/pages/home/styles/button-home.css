@@ -2,8 +2,8 @@
 .btn-home-1 {
   font-family: inherit;
   display: inline-block;
-  width: 19em;
-  height: 5.9em;
+  width: 30vh;
+  height: 10vh;
   overflow: hidden;
   cursor: pointer;
   margin: 26px;
@@ -26,8 +26,8 @@
 }
 
 .btn-home-1:hover {
-  width: 20em;
-  height: 6.2em;
+  width: 32vh;
+  height: 11vh;
 }
 
 .btn-home-1:before {
@@ -40,7 +40,7 @@
   top: -70px;
   left: 0px;
 }
-.btn-home-1 a{
+.btn-home-1{
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
   transition: 0.4s all;
@@ -53,8 +53,8 @@
 
 .btn-home-2 {
   font-family: inherit;
-  width: 19em;
-  height: 5.9em;
+  width: 30vh;
+  height: 10vh;
   cursor: pointer;
   margin: 26px;
   border: 0;
@@ -73,7 +73,7 @@
 }
 .btn-home-2:hover {
 opacity: 0.4;
-width: 20em;
-height: 6.2em;
+width: 32vh;
+height: 11vh;
 outline: none;
 }

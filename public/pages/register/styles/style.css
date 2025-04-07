@@ -13,7 +13,11 @@ body{
 
 
 }
-
+.register-label{
+    font-family: 'Bebas Neue';
+    font-size: 64px;
+    color: white;
+}
 .element-container img {
   width: 100%;
   object-fit: cover;
@@ -87,7 +91,7 @@ form button {
   outline: none;
 }
 form button:hover{
-  opacity: 0.8;
+  opacity: 0.65;
 }
 form a {
   text-decoration: none;
@@ -98,3 +102,11 @@ form a {
 form a:hover{
   opacity: 0.8;
 }
+body, html, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-color: #000000;
+  }

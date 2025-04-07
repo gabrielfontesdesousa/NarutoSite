@@ -17,7 +17,7 @@ header nav{
 .nav-btn-header {
   font-family: inherit;
   display: inline-block;
-  width: 23em;
+  width: 13em;
   height: 2.9em;
   line-height: 2.5em;
   overflow: hidden;
@@ -30,26 +30,28 @@ header nav{
   border-radius: 50px;
   position: relative;
   transition: 0.5s;
+  outline: none;
 }
 
 .nav-btn-header:before {
   position: absolute;
   content: "";
   background: red;
-  width: 200px;
+  width: 280px;
   height: 190px;
   z-index: -1;
   border-radius: 50%;
 }
 
 .nav-btn-header:hover {
-  width: 25em;
+  width: 14.1em;
   height: 3em;
 }
 
 .nav-btn-header:before {
   top: 100%;
   left: 100%;
+  outline: none;
   transition: 0.4s all;
 }
 
@@ -57,7 +59,7 @@ header nav{
   top: -70px;
   left: 0px;
 }
-.nav-btn-header a{
+a .nav-btn-header {
   font-family: 'MontSerrat', sans-serif;
   font-weight: 400;
   transition: 0.4s all;
