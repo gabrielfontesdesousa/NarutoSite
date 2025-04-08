@@ -1,0 +1,117 @@
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .container-catalogue {
+      height: auto;
+      padding-bottom: 50px;
+  }
+
+  .catalogue-line {
+      width: 90%;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+  }
+
+  .title-section-container h1 {
+      font-size: 80px;
+      text-align: center;
+  }
+
+  .card {
+      width: 320px;
+      height: auto;
+      padding-bottom: 20px;
+  }
+
+  .card-img img {
+      width: 50%;
+  }
+
+  .text-title {
+      font-size: 1.1em;
+  }
+
+  .textbody {
+      font-size: 0.9em;
+  }
+}
+.home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.art-container {
+  width: 50%;
+  height: calc(100vh - 136px);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: start;
+  align-items: center;
+}
+
+.art-container img {
+  width: 90%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.text-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 136px);
+  gap: 80px;
+  justify-content: center;
+}
+
+.desc-sub-container {
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  flex-direction: column;
+}
+
+.desc-sub-container p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(16px, 2vw, 24px); /* responsivo */
+  color: white;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.title-sub-container img {
+  max-width: 50%;
+}
+
+.title-sub-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsividade mínima para telas de notebooks */
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .desc-sub-container {
+    width: 90%;
+  }
+
+  .desc-sub-container p {
+    font-size: clamp(16px, 2vw, 22px);
+  }
+
+  .text-container {
+    gap: 60px;
+  }
+
+  .art-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
