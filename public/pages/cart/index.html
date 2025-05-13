@@ -1,120 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Carrinho</title>
-    <link rel="shortcut icon" href="../../../assets/accounticon.ico" type="image/x-icon">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../styles/index.css">
-    <link rel="stylesheet" href="../../../styles/header.css">
-    <link rel="stylesheet" href="../../../styles/footer.css">
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Carrinho</title>
+  <link rel="shortcut icon" href="../../../assets/accounticon.ico" type="image/x-icon">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../styles/index.css">
+  <link rel="stylesheet" href="../../../styles/header.css">
+  <link rel="stylesheet" href="../../../styles/footer.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-          <a href="../../../index.html">
-            <button class="nav-btn-header">Home</button>
+  <header>
+    <nav>
+      <a href="../../../index.html">
+        <button class="nav-btn-header">Home</button>
+      </a>
+      <a href="../../pages/sobre/index.html">
+        <button class="nav-btn-header">Sobre</button>
+      </a>
+
+      <a href="../../pages/login/index.html">
+        <button class="nav-btn-header">Login</button>
+      </a>
+    </nav>
+    <div class="sub-container-header">
+      <div class="cart-container">
+        <a href="../../pages/cart/index.html">
+          <img class="carticon" src="../../../assets/carticon.png" alt="">
         </a>
-        <a href="../../pages/sobre/index.html">
-            <button class="nav-btn-header">Sobre</button>
-        </a>
-
-        <a href="../../pages/login/index.html">
-            <button class="nav-btn-header">Login</button>
-        </a>
-        </nav>
-        <div class="sub-container-header">
-            <div class="cart-container">
-              <a href="../../pages/cart/index.html">
-                <img class="carticon" src="../../../assets/carticon.png" alt="">
-                </a>
-            </div>
-            <div class="account-icon-container">
-                <a href="">
-                    <img class="icon" src="../../../assets/accounticon.svg" alt="">
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main class="container">
-      <h1>MEU CARRINHO</h1>
-
-      <div id="cart-items"></div>
-
-      <div class="cart-summary">
-        <div class="total-items">
-          <span id="total-items">Total de itens: 0</span>
-        </div>
-        <div class="total-price">
-          <span id="total-price">Valor total: R$ 0,00</span>
-        </div>
-        <button class="checkout-button">Pagamento</button>
       </div>
-    </main>
+      <div class="account-icon-container">
+        <a href="">
+          <img class="icon" src="../../../assets/accounticon.svg" alt="">
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <footer>
-        <nav>
-            <div class="sections">
-                <h1>Seções</h1>
-                <a href="../../../public/pages/login/index.html"><h2>Login</h2></a>
-                <a href="../../../public/pages/sobre/index.html"><h2>Sobre nós</h2></a>
-                <a href="../../../public/pages/cart/index.html"><h2>Carrinho</h2></a>
-            </div>
-            <div class="contact">
-                <h1>Contato</h1>
-                <h2>Akatsuki.uv@gmail.com</h2>
-                <h2>(11) 91426-2903 </h2>
-                <h2>4321-1234</h2>
-            </div>
-            <div class="links">
-                <h1>Links</h1>
-                <h2>Instagram</h2>
-                <h2>Facebook</h2>
-                <h2>Whatsapp</h2>
-            </div>
-        </nav>
-        <div class="footer-logo">
-            <img src="../../../assets/logo-icon.svg" alt="">
-        </div>
-    </footer>
+  <main class="container">
+    <h1>MEU CARRINHO</h1>
 
-    <script>
-   document.addEventListener('DOMContentLoaded', () => {
-  const user = JSON.parse(sessionStorage.getItem("loggedUser"));
-  if (!user) {
-    alert("Você precisa estar logado para ver o carrinho.");
-    return;
-  }
+    <div id="cart-items"></div>
 
-  const cart = JSON.parse(localStorage.getItem('carts')) || {};
-  const userCart = cart[user.email] || [];
-  const cartContainer = document.getElementById('cart-items');
-  const totalItemsElement = document.getElementById('total-items');
-  const totalPriceElement = document.getElementById('total-price');
+    <div class="cart-summary">
+      <div class="total-items">
+        <span id="total-items">Total de itens: 0</span>
+      </div>
+      <div class="total-price">
+        <span id="total-price">Valor total: R$ 0,00</span>
+      </div>
+      <button class="checkout-button">Pagamento</button>
+    </div>
+  </main>
 
-  let totalItems = 0;
-  let totalPrice = 0;
+  <footer>
+    <nav>
+      <div class="sections">
+        <h1>Seções</h1>
+        <a href="../../../public/pages/login/index.html">
+          <h2>Login</h2>
+        </a>
+        <a href="../../../public/pages/sobre/index.html">
+          <h2>Sobre nós</h2>
+        </a>
+        <a href="../../../public/pages/cart/index.html">
+          <h2>Carrinho</h2>
+        </a>
+      </div>
+      <div class="contact">
+        <h1>Contato</h1>
+        <h2>Akatsuki.uv@gmail.com</h2>
+        <h2>(11) 91426-2903 </h2>
+        <h2>4321-1234</h2>
+      </div>
+      <div class="links">
+        <h1>Links</h1>
+        <h2>Instagram</h2>
+        <h2>Facebook</h2>
+        <h2>Whatsapp</h2>
+      </div>
+    </nav>
+    <div class="footer-logo">
+      <img src="../../../assets/logo-icon.svg" alt="">
+    </div>
+  </footer>
 
-  if (userCart.length === 0) {
-    cartContainer.innerHTML = '<p>O carrinho está vazio.</p>';
-    return;
-  }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = JSON.parse(sessionStorage.getItem("loggedUser"));
+      if (!user) {
+        alert("Você precisa estar logado para ver o carrinho.");
+        return;
+      }
 
-  userCart.forEach(item => {
-    const section = document.createElement('section');
-    section.classList.add('cart-item');
+      const cart = JSON.parse(localStorage.getItem('carts')) || {};
+      const userCart = cart[user.email] || [];
+      const cartContainer = document.getElementById('cart-items');
+      const totalItemsElement = document.getElementById('total-items');
+      const totalPriceElement = document.getElementById('total-price');
 
-    const itemTotal = item.price * item.quantity;
-    totalItems += item.quantity;
-    totalPrice += itemTotal;
+      let totalItems = 0;
+      let totalPrice = 0;
 
-    section.innerHTML = `
+      if (userCart.length === 0) {
+        cartContainer.innerHTML = '<p>O carrinho está vazio.</p>';
+        return;
+      }
+
+      userCart.forEach(item => {
+        const section = document.createElement('section');
+        section.classList.add('cart-item');
+
+        const itemTotal = item.price * item.quantity;
+        totalItems += item.quantity;
+        totalPrice += itemTotal;
+
+        section.innerHTML = `
       <div class="item-details">
         <img src="${item.image}" alt="${item.title}">
         <div>
@@ -125,8 +140,10 @@
       <div class="item-quantity">
         <span>Quantidade</span>
         <div class="quantity-control">
+          <button class="remove-button" data-title="${item.title}">❌</button>
           <input type="number" value="${item.quantity}" min="1" data-id="${item.title}" data-price="${item.price}">
         </div>
+        
       </div>
       <div class="item-price">
         <span>Preço</span>
@@ -134,12 +151,8 @@
       </div>
     `;
 
-    cartContainer.appendChild(section);
-  });
-
-  totalItemsElement.textContent = `Total de itens: ${totalItems}`;
-  totalPriceElement.textContent = `Valor total: R$ ${totalPrice.toFixed(2)}`;
-
+        cartContainer.appendChild(section);
+          // Atualiza valores de quantidade
   const quantityInputs = document.querySelectorAll('.quantity-control input');
   quantityInputs.forEach(input => {
     input.addEventListener('change', (e) => {
@@ -165,53 +178,99 @@
       location.reload();
     });
   });
-});
 
-function addToCart(button) {
-  const card = button.closest('.card');
+  // 👉 Adiciona eventos aos botões ❌ após os elementos existirem
+  const removeButtons = document.querySelectorAll('.remove-button');
+  removeButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      const title = e.target.dataset.title;
 
-  const name = card.getAttribute('data-name');
-  const category = card.getAttribute('data-category');
-  const price = parseFloat(card.getAttribute('data-price'));
-  const image = card.querySelector('img').src;
-  const description = card.querySelector('.textbody').textContent;
+      const updatedCart = userCart.filter(item => item.title !== title);
+      cart[user.email] = updatedCart;
+      localStorage.setItem('carts', JSON.stringify(cart));
 
-  if (isNaN(price)) {
-    alert("Erro ao obter o preço do produto.");
-    return;
-  }
+      location.reload();
+    });
+  });
 
-  const user = JSON.parse(sessionStorage.getItem("loggedUser"));
-  if (!user) {
-    alert("Você precisa estar logado para adicionar itens ao carrinho.");
-    return;
-  }
+      });
 
-  const product = {
-    title: name,
-    category: category,
-    price: price,
-    quantity: 1,
-    image: image,
-    description: description
-  };
+      totalItemsElement.textContent = `Total de itens: ${totalItems}`;
+      totalPriceElement.textContent = `Valor total: R$ ${totalPrice.toFixed(2)}`;
 
-  const cart = JSON.parse(localStorage.getItem('carts')) || {};
-  const userCart = cart[user.email] || [];
+      const quantityInputs = document.querySelectorAll('.quantity-control input');
+      quantityInputs.forEach(input => {
+        input.addEventListener('change', (e) => {
+          const newQuantity = parseInt(e.target.value);
+          if (isNaN(newQuantity) || newQuantity < 1) {
+            e.target.value = 1;
+            return;
+          }
 
-  const existingProductIndex = userCart.findIndex(item => item.title === product.title);
-  if (existingProductIndex !== -1) {
-    userCart[existingProductIndex].quantity += 1;
-  } else {
-    userCart.push(product);
-  }
+          const title = e.target.dataset.id;
+          const price = parseFloat(e.target.dataset.price);
 
-  cart[user.email] = userCart;
-  localStorage.setItem('carts', JSON.stringify(cart));
+          const updatedCart = userCart.map(item => {
+            if (item.title === title) {
+              item.quantity = newQuantity;
+            }
+            return item;
+          });
 
-  alert(`${name} foi adicionado ao carrinho!`);
-}
+          cart[user.email] = updatedCart;
+          localStorage.setItem('carts', JSON.stringify(cart));
 
-    </script>
+          location.reload();
+        });
+      });
+    });
+
+    function addToCart(button) {
+      const card = button.closest('.card');
+
+      const name = card.getAttribute('data-name');
+      const category = card.getAttribute('data-category');
+      const price = parseFloat(card.getAttribute('data-price'));
+      const image = card.querySelector('img').src;
+      const description = card.querySelector('.textbody').textContent;
+
+      if (isNaN(price)) {
+        alert("Erro ao obter o preço do produto.");
+        return;
+      }
+
+      const user = JSON.parse(sessionStorage.getItem("loggedUser"));
+      if (!user) {
+        alert("Você precisa estar logado para adicionar itens ao carrinho.");
+        return;
+      }
+
+      const product = {
+        title: name,
+        category: category,
+        price: price,
+        quantity: 1,
+        image: image,
+        description: description
+      };
+
+      const cart = JSON.parse(localStorage.getItem('carts')) || {};
+      const userCart = cart[user.email] || [];
+
+      const existingProductIndex = userCart.findIndex(item => item.title === product.title);
+      if (existingProductIndex !== -1) {
+        userCart[existingProductIndex].quantity += 1;
+      } else {
+        userCart.push(product);
+      }
+
+      cart[user.email] = userCart;
+      localStorage.setItem('carts', JSON.stringify(cart));
+
+      alert(`${name} foi adicionado ao carrinho!`);
+    }
+
+  </script>
 </body>
+
 </html>
