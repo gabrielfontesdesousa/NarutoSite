@@ -14,6 +14,7 @@ body {
     padding: 20px;
     max-width: 960px;
     margin: 0 auto;
+    overflow-y: auto;
 }
 .container h1{
     font-family: 'Bebas Neue';

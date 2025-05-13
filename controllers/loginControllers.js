@@ -1,27 +1,31 @@
-export function Login(){
+function Login(){
     let User = document.getElementById('userInput').value
     let Password = document.getElementById('passwordInput').value
     let Data = LoadData()
     const msgBox = document.getElementById('messageBox');
 
     let autenticado = false;
-  
+
     for (let i = 0; i < Data.length; i++) {
       if (User === Data[i].user && Password === Data[i].password) {
         autenticado = true;
+        sessionStorage.setItem("loggedUser", JSON.stringify(Data[i]));
         break;
       }
     }
-  
+
     if (autenticado) {
       showMessage("✅ Login realizado com sucesso!", "green");
+      setTimeout(() => {
+        window.location.href = "../../../index.html";
+      }, 1000)
     } else {
       showMessage("❌ Usuário ou senha incorretos.", "red");
     }
-  
+
     return false;
   }
-  
+
   function showMessage(texto, cor) {
     const msgBox = document.getElementById('messageBox');
     msgBox.innerText = texto;

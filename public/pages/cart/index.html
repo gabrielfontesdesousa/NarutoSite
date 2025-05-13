@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../../../styles/header.css">
     <link rel="stylesheet" href="../../../styles/footer.css">
     <link rel="stylesheet" href="./styles/style.css">
-
 </head>
 <body>
     <header>
@@ -44,78 +43,21 @@
     </header>
 
     <main class="container">
-        <h1>MEU CARRINHO</h1>
+      <h1>MEU CARRINHO</h1>
 
-        <section class="cart-item">
-            <div class="item-details">
-                <img src="../../../assets/mochila-product.png" alt="Mochila temática">
-                <div>
-                    <h3>Mochila temática</h3>
-                    <p>Mochila temática</p>
-                </div>
-            </div>
-            <div class="item-quantity">
-                <span>quantidade</span>
-                <div class="quantity-control">
-                    <input type="number" value="1" min="1">
-                </div>
-            </div>
-            <div class="item-price">
-                <span>Preço</span>
-                <p>R$ 100.00</p>
-            </div>
-        </section>
+      <div id="cart-items"></div>
 
-        <section class="cart-item">
-            <div class="item-details">
-                <img src="../../../assets/mug-product.png" alt="Caneca">
-                <div>
-                    <h3>Caneca</h3>
-                    <p>Lembranças</p>
-                </div>
-            </div>
-            <div class="item-quantity">
-                <span>quantidade</span>
-                <div class="quantity-control">
-                    <input type="number" value="1" min="1">
-                </div>
-            </div>
-            <div class="item-price">
-                <span>Preço</span>
-                <p>R$ 100.00</p>
-            </div>
-        </section>
-
-        <section class="cart-item">
-            <div class="item-details">
-                <img src="../../../assets/t-shirt-product.png" alt="Camiseta">
-                <div>
-                    <h3>Camiseta</h3>
-                    <p>Mochila temática</p>
-                </div>
-            </div>
-            <div class="item-quantity">
-                <span>quantidade</span>
-                <div class="quantity-control">
-                    <input type="number" value="1" min="1">
-                </div>
-            </div>
-            <div class="item-price">
-                <span>Preço</span>
-                <p>R$ 100.00</p>
-            </div>
-        </section>
-
-        <div class="cart-summary">
-            <div class="total-items">
-                <span>Total de itens : 3</span>
-            </div>
-            <div class="total-price">
-                <span>Valor total : R$ 300.00</span>
-            </div>
-            <button class="checkout-button">Pagamento</button>
+      <div class="cart-summary">
+        <div class="total-items">
+          <span id="total-items">Total de itens: 0</span>
         </div>
+        <div class="total-price">
+          <span id="total-price">Valor total: R$ 0,00</span>
+        </div>
+        <button class="checkout-button">Pagamento</button>
+      </div>
     </main>
+
     <footer>
         <nav>
             <div class="sections">
@@ -141,5 +83,135 @@
             <img src="../../../assets/logo-icon.svg" alt="">
         </div>
     </footer>
+
+    <script>
+   document.addEventListener('DOMContentLoaded', () => {
+  const user = JSON.parse(sessionStorage.getItem("loggedUser"));
+  if (!user) {
+    alert("Você precisa estar logado para ver o carrinho.");
+    return;
+  }
+
+  const cart = JSON.parse(localStorage.getItem('carts')) || {};
+  const userCart = cart[user.email] || [];
+  const cartContainer = document.getElementById('cart-items');
+  const totalItemsElement = document.getElementById('total-items');
+  const totalPriceElement = document.getElementById('total-price');
+
+  let totalItems = 0;
+  let totalPrice = 0;
+
+  if (userCart.length === 0) {
+    cartContainer.innerHTML = '<p>O carrinho está vazio.</p>';
+    return;
+  }
+
+  userCart.forEach(item => {
+    const section = document.createElement('section');
+    section.classList.add('cart-item');
+
+    const itemTotal = item.price * item.quantity;
+    totalItems += item.quantity;
+    totalPrice += itemTotal;
+
+    section.innerHTML = `
+      <div class="item-details">
+        <img src="${item.image}" alt="${item.title}">
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        </div>
+      </div>
+      <div class="item-quantity">
+        <span>Quantidade</span>
+        <div class="quantity-control">
+          <input type="number" value="${item.quantity}" min="1" data-id="${item.title}" data-price="${item.price}">
+        </div>
+      </div>
+      <div class="item-price">
+        <span>Preço</span>
+        <p>R$ ${(itemTotal).toFixed(2)}</p>
+      </div>
+    `;
+
+    cartContainer.appendChild(section);
+  });
+
+  totalItemsElement.textContent = `Total de itens: ${totalItems}`;
+  totalPriceElement.textContent = `Valor total: R$ ${totalPrice.toFixed(2)}`;
+
+  const quantityInputs = document.querySelectorAll('.quantity-control input');
+  quantityInputs.forEach(input => {
+    input.addEventListener('change', (e) => {
+      const newQuantity = parseInt(e.target.value);
+      if (isNaN(newQuantity) || newQuantity < 1) {
+        e.target.value = 1;
+        return;
+      }
+
+      const title = e.target.dataset.id;
+      const price = parseFloat(e.target.dataset.price);
+
+      const updatedCart = userCart.map(item => {
+        if (item.title === title) {
+          item.quantity = newQuantity;
+        }
+        return item;
+      });
+
+      cart[user.email] = updatedCart;
+      localStorage.setItem('carts', JSON.stringify(cart));
+
+      location.reload();
+    });
+  });
+});
+
+function addToCart(button) {
+  const card = button.closest('.card');
+
+  const name = card.getAttribute('data-name');
+  const category = card.getAttribute('data-category');
+  const price = parseFloat(card.getAttribute('data-price'));
+  const image = card.querySelector('img').src;
+  const description = card.querySelector('.textbody').textContent;
+
+  if (isNaN(price)) {
+    alert("Erro ao obter o preço do produto.");
+    return;
+  }
+
+  const user = JSON.parse(sessionStorage.getItem("loggedUser"));
+  if (!user) {
+    alert("Você precisa estar logado para adicionar itens ao carrinho.");
+    return;
+  }
+
+  const product = {
+    title: name,
+    category: category,
+    price: price,
+    quantity: 1,
+    image: image,
+    description: description
+  };
+
+  const cart = JSON.parse(localStorage.getItem('carts')) || {};
+  const userCart = cart[user.email] || [];
+
+  const existingProductIndex = userCart.findIndex(item => item.title === product.title);
+  if (existingProductIndex !== -1) {
+    userCart[existingProductIndex].quantity += 1;
+  } else {
+    userCart.push(product);
+  }
+
+  cart[user.email] = userCart;
+  localStorage.setItem('carts', JSON.stringify(cart));
+
+  alert(`${name} foi adicionado ao carrinho!`);
+}
+
+    </script>
 </body>
 </html>
