@@ -143,7 +143,7 @@
           <button class="remove-button" data-title="${item.title}">❌</button>
           <input type="number" value="${item.quantity}" min="1" data-id="${item.title}" data-price="${item.price}">
         </div>
-        
+
       </div>
       <div class="item-price">
         <span>Preço</span>
@@ -174,8 +174,6 @@
 
       cart[user.email] = updatedCart;
       localStorage.setItem('carts', JSON.stringify(cart));
-
-      location.reload();
     });
   });
 
