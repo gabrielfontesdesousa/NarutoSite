@@ -104,7 +104,7 @@
       const user = JSON.parse(sessionStorage.getItem("loggedUser"));
       if (!user) {
         alert("Você precisa estar logado para ver o carrinho.");
-        return;
+        window.location('../../../index.html')
       }
 
       const cart = JSON.parse(localStorage.getItem('carts')) || {};

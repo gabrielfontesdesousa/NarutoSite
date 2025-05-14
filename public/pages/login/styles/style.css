@@ -3,9 +3,7 @@ main {
   height: 75vh;
   position: relative;
 }
-body{
-  height: 75vh;
-}
+
 
 .element-container {
   width: 50%;
@@ -21,20 +19,18 @@ body{
 
 .login-container {
   display: flex;
+  height: 75vh;
   flex-grow: 1;
-  min-height: 75vh;
   width: 50%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-@media (max-width: 120px){
 
-}
 .sub-container-login {
   width: 90%;
-  height: auto;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +48,7 @@ body{
 
 .sub-container-login div div p {
   font-family: 'Montserrat';
-  font-size: 20px;
+  font-size: 15px;
   color: gray;
   padding-bottom: 20px;
 }
@@ -111,14 +107,6 @@ form a {
 form a:hover{
   opacity: 0.8;
 }
-body, html, *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body{
-    background-color: #000000;
-  }
   .register-btn {
     width: 100%;
     background-color:  #262626;

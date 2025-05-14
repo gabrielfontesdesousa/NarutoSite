@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 190vh;
     align-items: center;
+    flex: 1;
 }
 
 .catalogue-line {
