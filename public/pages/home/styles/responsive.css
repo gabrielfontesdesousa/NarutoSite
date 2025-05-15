@@ -93,7 +93,6 @@
   justify-content: center;
 }
 
-/* Responsividade mínima para telas de notebooks */
 @media screen and (max-width: 1440px) and (min-width: 1024px) {
   .desc-sub-container {
     width: 90%;

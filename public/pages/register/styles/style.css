@@ -2,9 +2,6 @@ main {
   display: flex;
   height: 75vh;
 }
-body{
-  height: 75vh;
-}
 
 .element-container {
   width: 50%;
@@ -57,12 +54,6 @@ body{
   font-size: 14px;
 }
 
-.sub-container-login div div {
-}
-
-
-
-
 form {
   display: flex;
   width: 80%;
@@ -105,11 +96,4 @@ form a {
 form a:hover{
   opacity: 0.8;
 }
-body, html, *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body{
-    background-color: #000000;
-  }
+
