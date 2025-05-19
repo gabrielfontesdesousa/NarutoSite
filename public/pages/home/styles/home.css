@@ -28,15 +28,17 @@
   gap: 80px;
   justify-content: center;
 }
+.text-container p{
+    font-size: 10em;
+}
 .desc-sub-container{
   display: flex;
   justify-content: center;
   width: 85%;
   flex-direction: column;
 }
-.desc-sub-container p{
-  font-family: 'montserrat', sans-serif;
-  font-size: 24px;
+.desc-sub-container h1{
+  font-family: 'Montserrat', sans-serif;
   color: white;
 }
 .btn-container{
@@ -49,4 +51,5 @@ max-width: 50%
 .title-sub-container{
   display: flex;
   justify-content: center;
+
 }

@@ -2,69 +2,207 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Akatsuki.Uv</title>
-  <link rel="shortcut icon" href="../../../assets/accounticon.ico" type="image/x-icon">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../../styles/index.css">
-  <link rel="stylesheet" href="../../../styles/header.css">
-  <link rel="stylesheet" href="../../../styles/footer.css">
-  <link rel="stylesheet" href="./styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Akatsuki.Uv</title>
+    <link rel="shortcut icon" href="../../../assets/accounticon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../styles/index.css">
+    <link rel="stylesheet" href="../../../styles/header.css">
+    <link rel="stylesheet" href="../../../styles/footer.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <main>
-    <div class="data-payment-area">
-      <div class="sub-data-payment-area">
-        <h1>Detalhes do pagamento</h1>
-        <div class="payment-tab-area">
-          <div class="payment-tab active">
-            <button>Crédito</button>
-          </div>
-          <div class="payment-tab">
-            <button>Débito</button>
-          </div>
-          <div class="payment-tab">
-            <button>Pix</button>
-          </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <main>
+        <div class="data-payment-area">
+            <div class="sub-data-payment-area">
+                <h1>Detalhes do pagamento</h1>
+                <div class="payment-tab-area">
+                    <div class="payment-tab active">
+                        <button class="tab-btn active" onclick="showTab('visa', this)">
+                            <img src="../../../assets/visaicon.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="payment-tab">
+                        <button class="tab-btn" onclick="showTab('mastercard', this)">
+                            <img src="../../../assets/mastercardicon.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="payment-tab">
+                        <button class="tab-btn" onclick="showTab('pix', this)">
+                            <img src="../../../assets/pixicon.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="payment-tab">
+                        <button class="tab-btn" onclick="showTab('boleto', this)">
+                            <img src="../../../assets/boletoicon.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="tab-content" id="visa" style="display: block; padding-top: 5%;">
+                    <div class="visa-form-container">
+                        <form action="">
+                            <h1>Visa</h1>
+                            <label for="card-number">Número do cartão</label>
+                            <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                            <label for="card-name">Nome do titular</label>
+                            <input type="text" id="card-name" placeholder="Nome completo">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="exp-month">Mês</label>
+                                    <select id="exp-month">
+                                        <option value="">MM</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="03">04</option>
+                                        <option value="03">05</option>
+                                        <option value="03">06</option>
+                                        <option value="03">07</option>
+                                        <option value="03">08</option>
+                                        <option value="03">09</option>
+                                        <option value="03">10</option>
+                                        <option value="03">11</option>
+                                        <option value="03">12</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="exp-year">Ano</label>
+                                    <select id="exp-year">
+                                        <option value="">YYYY</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                    </select>
+                                </div>
+
+                                <div class="col">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="CVV">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-content" id="mastercard" style="display: none; padding-top: 5%;">
+                    <div class="mastercard-form-container">
+                        <form action="">
+                            <h1>Mastercard</h1>
+                            <label for="card-number">Número do cartão</label>
+                            <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                            <label for="card-name">Nome do titular</label>
+                            <input type="text" id="card-name" placeholder="Nome completo">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="exp-month">Mês</label>
+                                    <select id="exp-month">
+                                        <option value="">MM</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="03">04</option>
+                                        <option value="03">05</option>
+                                        <option value="03">06</option>
+                                        <option value="03">07</option>
+                                        <option value="03">08</option>
+                                        <option value="03">09</option>
+                                        <option value="03">10</option>
+                                        <option value="03">11</option>
+                                        <option value="03">12</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="exp-year">Ano</label>
+                                    <select id="exp-year">
+                                        <option value="">YYYY</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                    </select>
+                                </div>
+
+                                <div class="col">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="CVV">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-content" id="pix" style="display: none; padding-top: 5%;">
+                    <h1 style="color: white;">Pix selecionado</h1>
+                    <p>Conclua todas as etapas para a conclusão da compra que será gerado um QRcode, para a conclusão do
+                        pagamento</p>
+                </div>
+                <div class="tab-content" id="boleto" style="display: none; padding-top: 5%;">
+                    <h1 style="color: white;">Boleto selecionado</h1>
+                    <p>Conclua todas as etapas para a conclusão da compra que você recebera o boleto para a conclusão
+                        via email</p>
+                </div>
+            </div>
         </div>
-        <div class="tab-content">
-          <div class="sub-tab-content active">
-            <form action="">
-              <input type="text" class="input-card-number" placeholder="Número do cartão" required>
-              <input type="text" class="input-card-name" placeholder="Nome do titular" required>
-              <input type="text" class="input-card-expiration" placeholder="Data de validade" required>
-              <input type="text" class="input-card-cvv" placeholder="CVV" required>
-            </form>
-          </div>
+        <div class="resume-payment-area">
+            <section id="order-summary" class="order-summary">
+                <h2>Resumo do Pedido</h2>
+                <p><strong>Itens no carrinho:</strong> <span id="resumo-itens"></span></p>
+                <p><strong>Subtotal:</strong> R$ <span id="subtotal"></span></p>
+                <p><strong>IVA (21%):</strong> R$ <span id="iva"></span></p>
+                <p><strong>Total com IVA:</strong> R$ <span id="total-com-iva"></span></p>
+                <p><strong>Total final após pagamento:</strong> R$ <span id="total-final"></span></p>
+                <button onclick="confirmarPedido()">Confirmar Pedido</button>
+            </section>
         </div>
+    </main>
+    <script>
+        function showTab(tabId, element) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
 
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
 
+            if (element) {
+                element.classList.add('active');
+            }
+        }
 
+        window.onload = function () {
+            const defaultBtn = document.querySelector('.tab-btn');
+            showTab('visa', defaultBtn);
+        };
+        const subtotalElement = document.getElementById('subtotal');
+        const ivaElement = document.getElementById('iva');
+        const totalComIvaElement = document.getElementById('total-com-iva');
+        const totalFinalElement = document.getElementById('total-final');
+        const resumoItens = document.getElementById('resumo-itens');
+        const saldoContaElement = document.getElementById('saldo-conta');
+        const cart = JSON.parse(localStorage.getItem('cart'));
+        const user = JSON.parse(sessionStorage.getItem("loggedUser"));
+        let totalPrice = cart[user.email]
+        if (resumoItens) resumoItens.textContent = totalItems;
 
+        if (resumoItens) resumoItens.textContent = totalItems;
+        if (subtotalElement) subtotalElement.textContent = totalPrice.toFixed(2);
+        if (ivaElement) ivaElement.textContent = iva.toFixed(2);
+        if (totalComIvaElement) totalComIvaElement.textContent = totalComIva.toFixed(2);
+        const precototal = JSON.parse(localStorage.getItem("PrecoTotal"));
+        if (totalFinalElement) totalFinalElement.textContent = pre.toFixed(2);
 
-        </div>
-
-      </div>
-
-    </div>
-    <div class="resume-payment-area">
-
-    </div>
-  </main>
+    </script>
 </body>

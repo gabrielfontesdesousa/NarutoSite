@@ -62,7 +62,6 @@
       </div>
       <div class="desc-sub-container">
         <img src="./assets/logo-icon.svg" alt="">
-
         <p>
           Aqui, você encontra produtos exclusivos inspirados na lendária organização de ninjas. Roupas,
           acessórios e
@@ -377,24 +376,20 @@
   <script>
     function addToCart(button) {
       const card = button.closest('.card');
-
       const name = card.getAttribute('data-name');
       const category = card.getAttribute('data-category');
-
       const priceText = card.querySelector('.card-footer .text-title').textContent;
-      const price = parseFloat(priceText.replace('R$', '').replace(',', '.').trim());  // Remove "R$", troca vírgula por ponto
-
+      const price = parseFloat(priceText.replace('R$', '').replace(',', '.').trim());
       const image = card.querySelector('img').src;
       const description = card.querySelector('.textbody').textContent;
-
       if (isNaN(price)) {
         alert("Erro ao obter o preço do produto.");
         return;
       }
-
       const user = JSON.parse(sessionStorage.getItem("loggedUser"));
       if (!user) {
         alert("Você precisa estar logado para adicionar itens ao carrinho.");
+        window.location('/public/pages/login/index.html')
         return;
       }
 
