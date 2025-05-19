@@ -41,10 +41,10 @@
   left: 0px;
 }
 .btn-home-1{
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   transition: 0.4s all;
-  font-size: 30px;
+  font-size: 1.1em;
   text-decoration: none;
   color: white;
 }
@@ -66,9 +66,9 @@
 }
 .btn-home-2 a{
   color: white;
-  font-family: 'Bebas Neue';
+  font-family: 'Montserrat';
   text-decoration: none;
-  font-size: 30px;
+  font-size: 1.1em;
   outline: none;
 }
 .btn-home-2:hover {

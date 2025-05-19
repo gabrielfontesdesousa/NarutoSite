@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -161,48 +160,10 @@
                 <h2>Resumo do Pedido</h2>
                 <p><strong>Itens no carrinho:</strong> <span id="resumo-itens"></span></p>
                 <p><strong>Subtotal:</strong> R$ <span id="subtotal"></span></p>
-                <p><strong>IVA (21%):</strong> R$ <span id="iva"></span></p>
-                <p><strong>Total com IVA:</strong> R$ <span id="total-com-iva"></span></p>
                 <p><strong>Total final após pagamento:</strong> R$ <span id="total-final"></span></p>
                 <button onclick="confirmarPedido()">Confirmar Pedido</button>
             </section>
         </div>
     </main>
-    <script>
-        function showTab(tabId, element) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.style.display = 'none');
-            document.getElementById(tabId).style.display = 'block';
-
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            if (element) {
-                element.classList.add('active');
-            }
-        }
-
-        window.onload = function () {
-            const defaultBtn = document.querySelector('.tab-btn');
-            showTab('visa', defaultBtn);
-        };
-        const subtotalElement = document.getElementById('subtotal');
-        const ivaElement = document.getElementById('iva');
-        const totalComIvaElement = document.getElementById('total-com-iva');
-        const totalFinalElement = document.getElementById('total-final');
-        const resumoItens = document.getElementById('resumo-itens');
-        const saldoContaElement = document.getElementById('saldo-conta');
-        const cart = JSON.parse(localStorage.getItem('cart'));
-        const user = JSON.parse(sessionStorage.getItem("loggedUser"));
-        let totalPrice = cart[user.email]
-        if (resumoItens) resumoItens.textContent = totalItems;
-
-        if (resumoItens) resumoItens.textContent = totalItems;
-        if (subtotalElement) subtotalElement.textContent = totalPrice.toFixed(2);
-        if (ivaElement) ivaElement.textContent = iva.toFixed(2);
-        if (totalComIvaElement) totalComIvaElement.textContent = totalComIva.toFixed(2);
-        const precototal = JSON.parse(localStorage.getItem("PrecoTotal"));
-        if (totalFinalElement) totalFinalElement.textContent = pre.toFixed(2);
-
-    </script>
+    <script src="./script.js"></script>
 </body>

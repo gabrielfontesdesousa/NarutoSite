@@ -35,5 +35,9 @@ O **akatsuki.UV** é mais do que uma loja online — é uma homenagem visual e f
 - HTML5 & CSS3 
 - BootStrap 
 
+## 🛠️ Diretório com os scripts
+
+-Arquivo script.js nas pastas Home, Login, Cart e Payment
+
 
 
