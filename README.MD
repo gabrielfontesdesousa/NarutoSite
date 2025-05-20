@@ -27,6 +27,7 @@ O **akatsuki.UV** é mais do que uma loja online — é uma homenagem visual e f
 - Gabriella Kailanny das Chagas Maris  
 - Guilherme Araujo Coelho  
 - Jennifer Pires de Souza
+- Bruno Zolatoreff
 
 ---
 
