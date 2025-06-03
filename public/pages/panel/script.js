@@ -37,6 +37,9 @@ function atualizarTabela() {
     const colunaNome = document.createElement("td");
     colunaNome.innerText = usuario.user;
 
+    const colunaSenha = document.createElement("td");
+    colunaSenha.innerText = usuario.password;
+
     const colunaAdmin = document.createElement("td");
     colunaAdmin.innerText = usuario.isAdmin ? "Sim" : "Não";
 
@@ -61,6 +64,7 @@ function atualizarTabela() {
 
     linha.appendChild(colunaId);
     linha.appendChild(colunaNome);
+    linha.appendChild(colunaSenha);
     linha.appendChild(colunaAdmin);
     linha.appendChild(colunaAcoes);
 
